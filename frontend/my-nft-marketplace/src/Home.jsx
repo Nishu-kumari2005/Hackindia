@@ -35,7 +35,7 @@ const Home = () => {
           <h1>Discover, Collect, and Sell Extraordinary NFTs</h1>
           <p>Join the world's largest NFT marketplace.</p>
           <div className="buttons">
-            <button className="btn create-btn" onClick={() => navigate("/GenerateImg")}>Create NFT</button>
+            <button className="btn create-btn" onClick={() => navigate("/createNFT")}>Create NFT</button>
             <button className="btn explore-btn">Explore Marketplace  →</button>
           </div>
         </div>

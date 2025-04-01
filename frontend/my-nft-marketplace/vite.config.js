@@ -10,5 +10,14 @@ export default defineConfig({
       usePolling: true,
     },
     hmr: true, // Enable hot module replacement
+
+    proxy: {
+      '/api': {
+        target: 'https://aistudio.google.com', // The API server you're accessing
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, ''), // Optional: Rewrite URL to match API path
+      },
+    },
   }
 })

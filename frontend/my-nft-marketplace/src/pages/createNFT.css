@@ -1,0 +1,77 @@
+body {
+  font-family: 'Arial', sans-serif;
+  /* background-color: #f4f4f9; */
+  margin: 0;
+  /* padding: 0; */
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  padding: 20px;
+}
+
+
+.nft-container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  width: 800px;
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.nft-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Adds space between inputs */
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+.input-field,
+.file-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.input-field:focus,
+.file-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+  outline: none;
+}
+
+.submit-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Slight zoom effect */
+}
+.nft-title {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+}

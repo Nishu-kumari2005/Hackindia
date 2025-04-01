@@ -16,23 +16,26 @@ const GenerateImg = () => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 3000)); // ⏳ Wait 3 seconds before sending a request
 
-      const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
+      const apiKey = import.meta.env.GEMINI_API_KEY;
+      console.log("API Key:", import.meta.env.GEMINI_API_KEY);
+
 
       const response = await axios.post(
-        "https://api.openai.com/v1/images/generations",
+        "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=GEMINI_API_KEY",
         {
           prompt,
           n: 1,
           size: "1024x1024",
         },
-        {
-          headers: {
-            Authorization: `Bearer ${apiKey}`,
-            "Content-Type": "application/json",
-          },
-        }
+        // {
+        //   headers: {
+        //     Authorization: `Bearer ${apiKey}`,
+        //     "Content-Type": "application/json",
+        //   },
+        // }
       );
 
+      
       setImageUrl(response.data.data[0].url);
     } catch (error) {
       console.error(

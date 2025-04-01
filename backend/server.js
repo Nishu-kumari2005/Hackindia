@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 import authRoutes from "./routes/auth.js";
+import axios from "axios";
 
 dotenv.config();
 
@@ -34,18 +35,18 @@ app.post("/generateImg", async (req, res) => {
 
     // Call OpenAI API
     const response = await axios.post(
-      "https://api.openai.com/v1/images/generations",
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=GEMINI_API_KEY",
       {
         prompt: prompt,
         n: 1,
         size: "1024x1024",
       },
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-          "Content-Type": "application/json",
-        },
-      }
+      // {
+      //   headers: {
+      //     Authorization: `Bearer ${process.env.GEMINI_API_KEY}`,
+      //     "Content-Type": "application/json",
+      //   },
+      // }
     );
 
     const imageUrl = response.data.data[0].url;
